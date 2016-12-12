@@ -1,0 +1,18 @@
+<ion-view>
+	<ion-nav-title>
+		<i class="icon ion-person"></i> {{player.name}}
+	</ion-nav-title>
+	<ion-nav-buttons side="right">
+		<button class="button button-icon">
+			<span ng-show="showScore" class="badge badge-energized">{{player.score}}✩</i></span>
+		</button>
+	</ion-nav-buttons>
+	<ion-content padding="true" overflow-scroll="false">
+		<ul class="list">
+			<li class="item item-text-wrap level-box" ng-repeat="level in dlevels" ng-class="level.done" ng-bind-html="level.name"
+				ui-sref="game({pid:pid,lid:level.lid})">
+			</li>
+		</ul>
+	</ion-content>
+</ion-view>
+

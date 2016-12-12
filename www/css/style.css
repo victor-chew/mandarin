@@ -1,0 +1,124 @@
+.player-form {
+	margin-bottom: 0.5em;
+}
+
+.content-box {
+	height: 40vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.player-box {
+	border-color: lightgray;
+	border-style: single;
+	background-color: #ffff26;
+	font-size: x-large;
+	font-weight: bold;
+	margin-bottom: 0.5em; 
+}
+
+.level-box {
+	border-color: lightgray;
+	border-style: single;
+	background-color: #73b9ff;
+	font-size: large;
+	font-weight: bold;
+}
+
+.level-box-done {
+	background-color: #4cff4c;
+}
+
+.input-text {
+	font-size: x-large;
+	font-weight: bold;
+	line-height: 120%;
+	text-align: center;
+	overflow-wrap: break-word;
+}
+
+.speak-button {
+   position: absolute;
+   right: 10px;
+   z-index: 9999;
+}
+
+.output-text {
+	font-size: x-large;
+	font-weight: bold;
+	line-height: 120%;
+	text-align: center;
+	overflow-wrap: break-word;
+	margin-bottom: 1em;
+}
+
+.correct {
+	color: green;
+}
+
+.wrong {
+	color: red;
+	text-decoration: underline;
+}
+
+.modal{
+	background: #ffff4c;
+	border-radius: 8px !important;
+	overflow:hidden !important;
+}
+
+.modal-center {
+    min-height: 0;
+}
+
+.level-done {
+}
+  
+.level-done.ng-hide-remove {
+	animation: 0.5s bounce ease;
+}
+
+.item-complex .item-content {
+	background-color: #ffff26;
+	text-align: center;
+	font-weight: bold;
+	font-size: large;
+}
+
+.item.active,
+.item.activated,
+.item-complex.active .item-content,
+.item-complex.activated .item-content,
+.item .item-content.active,
+.item .item-content.activated {
+	background-color: #ffc926;
+}
+
+.loading-container .loading {
+    background-color: transparent;
+}
+
+.scoreboard {
+    background-color: #ffc926;
+    color: #fff;
+    z-index: 1;
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 1em;
+    text-align: center;
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 3em;
+    line-height: 2em;
+	min-width: 5em;
+}
+
+.scoreboard-in {
+	animation: 1s zoomInUp ease;
+}
+
+.scoreboard-out {
+	animation: 1s zoomOutUp ease;
+}

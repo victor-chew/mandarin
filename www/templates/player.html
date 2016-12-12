@@ -1,0 +1,21 @@
+<ion-view title="Learn to Speak Mandarin" hide-back-button="true">
+	<ion-content class="padding">
+		<form name="playerForm" class="player-form" novalidate="true" ng-submit="newPlayer()">
+			<label class="item item-input">
+				<input type="text" placeholder="What is your name?" ng-model="formData.playerName" required />
+			</label>
+			<input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;" />
+		</form>
+		<ion-list class="card" can-swipe="true">
+			<ion-item ng-repeat="player in dplayers" type="item-text-wrap" ui-sref="level({pid:player.pid})">
+				<span style="float:left">
+					<i class="icon ion-person"></i> {{player.name}} <span class="badge badge-energized">{{player.score}}✩</span>
+				</span>
+				<ion-option-button class="button button-outline button-assertive" ng-click="delPlayer({{player.pid}})">
+					<i class="icon ion-minus-circled"></i>
+				</ion-option-button>
+			</ion-item>
+		</ion-list>
+		<button class="button button-full button-balanced" ng-disabled="playerForm.$invalid" ng-click="newPlayer()">Proceed</button>
+	</ion-content>
+</ion-view>

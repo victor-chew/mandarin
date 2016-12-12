@@ -1,0 +1,29 @@
+<ion-view>
+	<ion-nav-title>
+		<i class="ion-grid"></i>&nbsp;{{levelName}}
+	</ion-nav-title>
+	<ion-nav-buttons side="right">
+		<button class="button button-icon">
+			<span class="badge badge-assertive">{{questionNum}}/{{numQuestions}}&nbsp;({{answered}}✩)</i></span>
+		</button>
+	</ion-nav-buttons>
+	<ion-content scroll="false" class="padding fill-height">
+		<button class="button button-icon icon ion-volume-medium speak-button" ng-disabled="speakingNow" ng-hide="showRecording" ng_click="speakText()"></button>
+		<div class="item item-text-wrap content-box input-text" ng-bind-html="questionText"></div>
+		<div class="item item-text-wrap content-box">
+			<ion-spinner icon="lines" class="spinner-balanced ng-hide" ng-show="showRecording"></ion-spinner>
+			<div class="output-text" ng-show="showRecogText" ng-bind-html="diffText"></div>
+			<div ng-show="showRecordBtn"><button class="button button-balanced icon-left ion-mic-a" ng-disabled="speakingNow" ng-click="startRecognition()">{{recogButton}}</button></div>
+			<div class="row" ng-show="showRecording">
+				<div class="col" align="right"><button class="button button-balanced" ng-click="stopRecognition()">OK</button></div>
+				<div class="col" align="left"><button class="button button-assertive" ng-click="cancelRecognition()">Cancel</button></div>
+			</div>
+			<div ng-show="showPlsWait"><button class="button button-outline button-dark" ng-click="">Please wait...</button></div>
+			<div ng-class="nextButtonDiv" ng-show="showNextButton"><button ng-class="nextButtonClass" ng-click="nextQuestion()">{{nextButton}}</button></div>
+		</div>
+	</ion-content>
+	<ion-footer-bar class="bar-positive">
+		<button class="button icon ion-arrow-left-b" ng-click="navPrev()"></button>
+		<button class="button icon ion-arrow-right-b" ng-click="navNext()"></button>
+	</ion-footer-bar>
+</ion-view>
